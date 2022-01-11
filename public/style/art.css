@@ -1,0 +1,99 @@
+	element.style {
+    min-height: 100%;
+    background-color: 90AEA4;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+figure.snip1281 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 230px;
+  max-width: 315px;
+  max-height: 220px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+}
+figure.snip1281 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+figure.snip1281 img {
+  opacity: 0.7;
+  max-width: 100%;
+}
+figure.snip1281:after {
+  background: #000000;
+  width: 0;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+figure.snip1281 figcaption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+figure.snip1281 h2,
+figure.snip1281 span {
+  margin: 0;
+  width: 100%;
+}
+figure.snip1281 h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+figure.snip1281 span {
+  color: #e6e6e6;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+figure.snip1281 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+figure.snip1281.yellow:after {
+  background-color: #f39c12;
+}
+
+figure.snip1281:hover img,
+figure.snip1281.hover img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+figure.snip1281:hover:after,
+figure.snip1281.hover:after {
+  width: 100%;
+}
+
+h3 {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #CCC;
+  text-align: center;
+  text-shadow: 1px 1px 0 white, 2px 2px 0 rgb(133, 58, 58);
+  font-size: 4em;
+  font-style: italic;
+}
+

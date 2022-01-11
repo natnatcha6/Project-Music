@@ -1,0 +1,26 @@
+<%- include('partials/h-user.ejs') %>
+
+<div class="container" style="width:35%;margin:25px auto;">
+    <h3 style="text-align: center;">Edit artist</h3>
+    <form action='/artist/<%= artist._id %>?_method=PUT' method="POST" enctype='multipart/form-data'>
+    
+        <div class="form-group">
+            <label class="from-label">Artist name</label>
+            <input type="text" class="form-control" name="artist[name]" placeholder='<%= artist.name %>' value ='<%= artist.name %>'>
+        </div> <br>
+        
+        <div class="form-group">
+            <label class="from-label">Image</label>
+            <img src='<%= artist.image %>' height="15%" width="40%"> <br>
+            <input type="file" class="form-control" name="image" accept="image/*">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-primary" style="float: center;">Edit Artist</button>
+     
+        <a href='/artist'>GO back</a>
+  </form>
+</div>  
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<%- include('partials/footer.ejs') %>

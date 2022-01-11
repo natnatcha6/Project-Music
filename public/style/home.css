@@ -1,0 +1,11 @@
+.btn-search-navbar {
+  padding: .375rem .75rem;
+}
+.image-slide {
+  height: 250;
+  padding: 0 30%;
+}
+.image-item {
+  border-radius: 15px;
+  padding: 10 10;
+}

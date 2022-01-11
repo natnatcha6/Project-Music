@@ -1,0 +1,22 @@
+<%- include('partials/header-login.ejs') %>
+<form action="/login" method="POST">
+    <div class="login-form">
+        <div id="img_container">
+            <img src="https://i.pinimg.com/originals/f8/9a/e1/f89ae15e25a2130d2811cedbe03bdefa.png" />
+        </div>
+        <br><h2>Log in to continue</h2><br>
+        <div class="form-group ">
+          <input type="text" class="form-control" placeholder="Your username" name = "username">
+          <i class="fa fa-user"></i>
+        </div>
+        <div class="form-group log-status">
+          <input type="password" class="form-control" placeholder="Password" name="password">
+          <i class="fa fa-lock"></i>
+        </div>
+        <span class="alert">Invalid Credentials</span>
+        <a class="link" href="#">Lost your password?</a>
+        <button type="sumbit" class="log-btn">Log in</button>
+        <br><br><p>Don't have an account?<a class="link-1" href="/register">  SIGN UP</a></p> 
+    </div>
+</form>
+<%- include('partials/footer-login.ejs') %>

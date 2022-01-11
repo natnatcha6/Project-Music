@@ -1,0 +1,305 @@
+<%- include('partials/h-user.ejs') %>
+
+		<br>
+
+		<% if(!currentUser) {%>
+		<div class="wrapper" style="min-height: 100%; background-color: #aec7be;"  >
+			<div class="container" >
+				<h3>Top Arist</h3>
+				<div class="row">
+					<% artist.forEach(function(artist){ %>
+						<div class="col-3">
+
+							<figure class="snip1281 yellow">
+								<img src="<%= artist.image %>" alt="sample22" height="170px" width="500px" />
+								<figcaption>
+									<h2>
+										<%= artist.name %>
+									</h2>
+								</figcaption>
+								<a href="/artist/<%= artist.name %>"></a>
+							</figure>
+						</div>
+						<% }); %>
+				</div>
+			</div>
+		</div>
+			<% } else { %>
+				<% if(currentUser.username=='admin' ){ %>
+					<div class="wrapper" style="min-height: 100%; background-color: #eee;"  >
+					<div class="container">
+						<div class="calendar clearfix">
+							<h3>Add Artist
+								<a href='/admin/addArt'>
+									<i class="fa fa-plus-square" aria-hidden="true">
+									</i>
+								</a>
+							</h3>
+
+							<% artist.forEach(function(artist){ %>
+								<article class="event">
+									<figure>
+										<img src="<%= artist.image %>" alt="sample22" height="100%" width="100%" />
+									</figure>
+									<aside>
+										<h2 class="name">
+											<%= artist.name %>
+										</h2>
+										<br><br>
+										<a href='/artist/<%= artist._id %>/edit'>
+											<button class="btn1">
+												<i class="fa fa-paint-brush" aria-hidden="true"> edit</i>
+											</button>
+										</a>
+
+
+										<form id='delete-from' action='/artist/<%= artist._id %>?_method=DELETE'
+											method="POST">
+											<button class="btn2 border-0" type="submit"
+												onclick="return confirm('Are you sure you want to Remove?');">
+												<i class="fa fa-trash" aria-hidden="true"> Delete</i>
+											</button>
+										</form>
+
+									</aside>
+								</article>
+								<% }); %>
+						</div>
+					</div>
+			</div>
+					<% } else { %>
+						<div class="wrapper" style="min-height: 100%; background-color: #aec7be;"  >
+						<div class="container">
+							<h3>Top Arist</h3>
+							<div class="row">
+								<% artist.forEach(function(artist){ %>
+									<div class="col-3">
+
+										<figure class="snip1281 yellow">
+											<img src="<%= artist.image %>" alt="sample22" height="170px"
+												width="500px" />
+											<figcaption>
+												<h2>
+													<%= artist.name %>
+												</h2>
+											</figcaption>
+											<a href="/artist/<%= artist.name %>"></a>
+										</figure>
+									</div>
+									<% }); %>
+							</div>
+						</div>
+						<% } %>
+							<% } %>
+	</div>
+</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+	<style>
+	
+		#delete-from {
+			display: inline;
+		}
+
+		h3 {
+			position: relative;
+			margin-bottom: 2rem;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid rgb(87, 87, 87);
+			text-align: center;
+			text-shadow: 1px 1px 0 rgb(124, 117, 92), 2px 2px 0 rgb(255, 255, 255);
+			font-size: 3em;
+			font-style: italic;
+		}
+
+		*,
+		*:before,
+		*:after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.btn1 {
+			font: bold 12px/12px Arial, sans-serif;
+			color: white;
+			text-transform: uppercase;
+			display: inline-block;
+			border: none;
+			padding: 10px 10px;
+			background: #fed136;
+			cursor: pointer;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-o-border-radius: 4px;
+			-webkit-border-radius: 4px;
+		}
+
+		.btn1:hover {
+			background: #e3b412;
+			color: #fff;
+		}
+
+		.btn2 {
+			font: bold 12px/12px Arial, sans-serif;
+			color: white;
+			text-transform: uppercase;
+			display: inline-block;
+			padding: 10px 10px;
+			background: red;
+			cursor: pointer;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-o-border-radius: 4px;
+			-webkit-border-radius: 4px;
+		}
+
+		.btn2:hover {
+			background: pink;
+			color: #fff;
+		}
+
+		form>* {
+			outline: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: #6d8ce8;
+		}
+
+		.clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+
+		/* ------------------ */
+		body {
+			margin: 0;
+			font-family: Helvetica, Arial, sans-serif;
+			background-color: #aec7be;;
+		}
+
+		.calendar {
+			max-width: 1000px;
+			min-width: 768px;
+			margin: 0 auto;
+		}
+
+		.calendar .title {
+			color: #6d8ce8;
+			margin: 1rem 0 0;
+			text-align: center;
+			background-color: white;
+			padding: 1rem;
+		}
+
+		.event {
+			position: relative;
+			padding-bottom: 16.665%;
+			margin: 1rem 0;
+			background-color: white;
+		}
+
+		.event>figure {
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			width: 25%;
+			height: 100%;
+		}
+
+		.event aside {
+			position: absolute;
+			top: 0;
+			left: 25%;
+			width: 75%;
+			height: 100%;
+			font-size: 12px;
+			padding: 1rem;
+			color: #888;
+		}
+
+		.name {
+			cursor: pointer;
+			color: #555;
+			margin: 0.3rem 0;
+			transition: all 200ms ease-in-out;
+		}
+
+		.name:hover {
+			color: #6d8ce8;
+		}
+
+
+		@media screen and (max-width: 767px) {
+			.calendar {
+				max-width: 100%;
+				min-width: 320px;
+				overflow: hidden;
+			}
+
+			.event {
+				float: left;
+				position: relative;
+				width: 46%;
+				margin: 2%;
+				padding: 0;
+			}
+
+			/* floating fix */
+			.event:nth-child(3n + 1) {
+				clear: both;
+			}
+
+			.event figure {
+				position: relative;
+				width: 100%;
+				padding-bottom: 66.66%;
+			}
+
+			.event aside {
+				position: relative;
+				width: 100%;
+				left: 0;
+			}
+
+			.tags {
+				line-height: 1;
+				border: none;
+				position: relative;
+				height: auto;
+				padding: 0;
+				margin-top: 1em;
+			}
+
+			.tag {
+				display: inline-block;
+				background-color: #eee;
+				padding: 0.4em;
+				border-radius: 0.4em;
+				margin: 0.2rem 0.1rem;
+			}
+		}
+
+		@media screen and (max-width: 414px) {
+			.event {
+				float: left;
+				position: relative;
+				width: 96%;
+				margin: 2%;
+				padding: 0;
+			}
+		}
+	</style>
+
+	<%- include('partials/footer.ejs') %>

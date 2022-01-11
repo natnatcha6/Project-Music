@@ -1,0 +1,170 @@
+<%- include('partials/h-user.ejs') %>
+<div class="wrapper" style="min-height: 100%;">
+  <section class="cf team-container">
+    <h1 class="team-h1">Member</h1>
+
+    <% user.forEach(function(user){ %>
+      <div class="team-member">
+								
+        <img src="<%= user.image%>" class="team-photo" alt="sample22" height="144px" width="144px"/> 
+        <br>
+        <h6><%= user.username %></h6>
+        <span><%= user.email %></span>
+<br>
+        <form id='delete-from' action='/admin/member/<%= user._id %>?_method=DELETE' method="POST">
+          <button class="btn2 border-0" type="submit" onclick="return confirm('Are you sure you want to Remove?');">
+            <i class="fa fa-trash" aria-hidden="true"> Delete</i>
+          </button>
+        </form>
+      </div>
+      <% }); %>
+  </section>
+</div>
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+  <style>
+
+    body {
+      background-color: #eee;
+    }
+    .btn2 {
+      font: bold 12px/12px Arial, sans-serif;
+      color: white;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 10px 10px;
+      background: red;
+      cursor: pointer;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -o-border-radius: 4px;
+      -webkit-border-radius: 4px;
+    }
+
+    .btn2:hover {
+      background: pink;
+      color: #fff;
+    }
+    h6 {
+      font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+      font-size: 30px;
+      color: #006d3a;
+      text-align: center;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1.team-h1 {
+      margin: 0;
+      position: absolute;
+      top: -16px;
+      text-align: center;
+      left: 40%;
+      font-family: georgia;
+      font-style: italic;
+      
+      padding: 0px 20px;
+      color: #222;
+    }
+
+    .cf:before,
+    .cf:after {
+      content: " ";
+      /* 1 */
+      display: table;
+      /* 2 */
+    }
+
+    .cf:after {
+      clear: both;
+    }
+
+    /**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+    .cf {
+      *zoom: 1;
+    }
+
+    .team-container {
+      max-width: 1000px;
+      margin: auto;
+      border-top: 1px #e9e9e9 solid;
+      border-bottom: 1px #e9e9e9 solid;
+      padding-top: 5em;
+      padding-bottom: 5em;
+      margin-top: 3em;
+      position: relative;
+    }
+
+    .team-member {
+      width: 16%;
+      float: left;
+      text-align: center;
+      margin-right: 5%;
+    }
+
+    .team-member:last-child {
+      margin-right: 0;
+    }
+
+    .team-member span,
+    .team-member h3 {
+      max-width: 200px;
+      font-family: sans-serif;
+      letter-spacing: -1px;
+    }
+
+    .team-member h3 {
+      color: #1ca3a3;
+    }
+
+    .email {
+      color: #ea2678;
+    }
+
+    .team-member span {
+      display: block;
+    }
+
+    .team-photo {
+      border-radius: 50%;
+      text-align: center;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
+      transition: 0.1s transform ease-in-out;
+    }
+
+    .team-photo:hover {
+      transform: scale(0.9);
+      cursor: pointer;
+    }
+
+    /* code for phone layout */
+    @media (max-width: 850px) {
+      .team-member {
+        width: 25%;
+        margin-left: 4%;
+        margin-right: 4%;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .team-member {
+        float: none;
+        display: block;
+        margin: 50px auto;
+        width: 100%;
+        text-align: center;
+      }
+
+      .team-member h3,
+      .team-member span {
+        margin: 15px auto;
+      }
+    }
+  </style>
+  <%- include('partials/footer.ejs') %>

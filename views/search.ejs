@@ -1,0 +1,95 @@
+<%- include('partials/h-user.ejs') %>
+<div class="wrapper" style="min-height: 100%;">
+<br>
+<% if (music == ''){ %>
+<div class="container1"> 
+  <h1> No results found for <span>"<%= word %>"</span></h1>
+  <h5>Please make sure your words are spelled correctly or use less or different keywords.</h5>
+</div>
+<% } else {%>
+<div class="container">
+  <h2>Result of <span>"<%= word %>"</span></h2>
+  <div class="row">
+          <div class="col-8">
+
+              <% music.forEach(function(music){ %>
+                
+                  <div class="row border-top">
+                      <div class="col-2 align-self-center">
+                          <div class="text-center"></div>
+                      </div>
+                      <div class="col-3 align-self-center">
+                          <div class="text-center">
+                              <a href="/artist/melody/<%= music.music %>"><img src="<%= music.image %>" class="img-fluid image-item" /></a>
+                          </div>
+                      </div>
+                      <div class="col-5 align-self-center">
+                          <a href="/artist/melody/<%= music.music %>">
+                              <div class="truncate-text">
+                                  <h6><%= music.music %></h6>
+                              </div>
+                             
+                          </a>
+                      </div>
+                  </div>  
+                
+        <% }); %>
+              </div>
+        </div>
+  </div>
+
+<% } %>
+
+</div>
+<style>
+
+.h6, h6 {
+    font-size: 2rem;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+.h6, h6:hover {
+    color: rgb(0, 153, 82);
+}
+.image-item {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10 10;
+    border-radius: 50%;
+}
+
+.h1, h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 150px;
+    font-size: 50px;
+}
+
+.h5, h5 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: -130px;
+}
+
+span{
+  color: rgb(255, 0, 0);
+}
+
+h2 {
+    position: relative;
+    text-shadow: 1px 1px 0 rgb(255, 255, 255), 2px 2px 0 rgb(0, 0, 0);
+    margin-bottom: 2rem;
+		padding-bottom: 1rem;
+		text-align: center;	
+		font-size: 3em;
+		font-style: italic;
+}
+
+
+</style>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js">
+
+</script>
+<%- include('partials/footer.ejs') %>

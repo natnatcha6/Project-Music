@@ -1,0 +1,76 @@
+<%- include('partials/herder-register.ejs') %>
+  <div class="login-form">
+    <form action="/register" method='POST'  enctype='multipart/form-data'>
+      <div id="img_container">
+        <img src="https://i.pinimg.com/originals/f8/9a/e1/f89ae15e25a2130d2811cedbe03bdefa.png" />
+      </div>
+      <br>
+      
+      
+        <div class="input-group mb-3">
+          <div class="input-group-append">
+              <span class="input-group-text"><i class="far fa-images"></i></span>
+          </div>
+          <input type="file" name="image" class="form-control input_user" accept="image/*">
+        </div>
+    
+    
+      <div class="form-group ">
+        <input type="text" class="form-control" name='username' placeholder="Username " required="required">
+        <i class="fa fa-user"></i>
+      </div>
+
+      <div class="form-group log-status">
+        <input type="e-mail" class="form-control" name='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="You'll use this when you log in and if you ever need to reset your password." placeholder="Email" required="required">
+        <i class="fa fa-envelope"></i>
+      </div>
+     
+
+      <div class="form-group log-status">
+        <input type="password" class="form-control" name='password' placeholder="Password" required="required">
+        <i class="fa fa-lock"></i>
+      </div>
+
+      <!-- <div class="form-group log-status">
+        <input type="password" class="form-control" name='comment[pass]' placeholder="Retype Password" >
+        <i class="fa fa-lock"></i>
+    </div> -->
+
+
+      <button type="submit" class="log-btn">SIGN UP</button>
+      <br><br>
+      <p>Already on Ciambella?
+        <a class="link-1" href="/login">Log in</a>
+      </p>
+    </form>
+  </div>
+
+<style>
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.59rem .75rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #055160;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #ffffffb5;
+    border: 1px solid #ffffff;
+    border-radius: .25rem;
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    position: relative;
+    margin-left: 2px;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    height: max-content;
+}
+</style>
+
+
+ 
+  <%- include('partials/footer-login.ejs') %>

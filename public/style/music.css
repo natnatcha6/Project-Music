@@ -1,0 +1,14 @@
+.btn-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .btn-box i {
+    font-size: 24px;
+    color: #ff3677;
+    margin: 0 30px;
+    cursor: pointer;
+  }
+  .btn-box i.active {
+    color: #7c7c7c;
+  }

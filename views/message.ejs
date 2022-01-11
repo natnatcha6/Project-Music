@@ -1,0 +1,82 @@
+<%- include('partials/h-user.ejs') %>
+
+    <div class="container" style="min-height: 100%;">
+
+        <h1 class="team-h1">Message</h1><br><br>
+        <% contact.forEach(function(contact){ %>
+            
+            <div class="box effect1">
+                <h5><b><span>NAME : </span></b>
+                    <%= contact.name %>
+                </h5>
+                <h5><b><span>EMAIL : </span></b>
+                    <%= contact.email %>
+                </h5>
+                <h5><b><span>MESSAGE : </span></b>
+                    <%= contact.message %>
+                </h5>
+            </div>
+            <% }); %>
+
+    </div>
+
+    <style>
+        body {
+            background: #eee;
+        }
+
+        h2 {
+            color: rgb(60, 92, 74);
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #CCC;
+            text-align: center;
+            font-size: 3em;
+            font-style: italic;
+        }
+
+        h1.team-h1 {
+            margin: 0;
+            position: absolute;
+            top: 100px;
+            text-align: center;
+            left: 40%;
+            font-family: georgia;
+            font-style: italic;
+            padding: 0px 20px;
+            color: #222;
+        }
+
+        span {
+            color: rgb(17, 56, 184);
+        }
+
+
+        .box h5 {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            text-align: left;
+            position: relative;
+            top: 25px;
+            font-size: 18px;
+            right: -52px;
+        }
+
+
+        .box {
+            width: 70%;
+            height: 17%;
+            background: rgb(214, 241, 233);
+            margin: 40px auto;
+        }
+    </style>
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <%- include('partials/footer.ejs') %>

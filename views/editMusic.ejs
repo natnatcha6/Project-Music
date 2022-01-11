@@ -1,0 +1,37 @@
+<%- include('partials/h-user.ejs') %>
+
+    <div class="container" style="width:35%;margin:25px auto;">
+        <h3 style="text-align: center;">Edit Music</h3>
+        <form action='/admin/adminMusic/<%= music._id %>?_method=PUT' method="POST" enctype='multipart/form-data'>
+
+            <div class="form-group">
+                <label for="edutarotName" style="float: left;">Artist</label>
+                <input type="text" class="form-control" name="music[name]" placeholder='<%= music.name %>'
+                    value='<%= music.name %>'>
+            </div> <br>
+
+            <div class="form-group">
+                <label for="edutarotName" style="float: left;">Music</label>
+                <input type="text" class="form-control" name="music[music]" placeholder='<%= music.music %>'
+                    value='<%= music.music %>'>
+            </div> <br>
+
+            <div class="form-group">
+                <label for="edutarotImageUpload" style="float: left;">Image </label>
+                <img src='<%= music.image %>' height="15%" width="40%"> <br>
+                <input type="file" class="form-control" name="image" accept="image/*">
+            </div><br>
+
+
+            <textarea class="form-control" rows="10" name="music[melody]" placeholder='<%= music.melody %>'
+                value='<%= music.melody %>'></textarea><br>
+
+            <button type="submit" class="btn btn-outline-primary" style="float: center;">Edit Music</button>
+
+            <a href='/admin/adminMusic'>GO back</a>
+        </form>
+    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <%- include('partials/footer.ejs') %>

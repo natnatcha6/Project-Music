@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "60be0d43a21f615fa456917a"
+  },
+  "music": [
+    {
+      "artist": "BTS",
+      "music": "Butter",
+      "imageMu": "https://image.joox.com/JOOXcover/0/96248b82cfc72ea1/300",
+      "mp3": "https://image.joox.com/JOOXcover/0/96248b82cfc72ea1/300",
+      "melody": "Smooth like butter, Like a criminal undercover, Gon’ pop like trouble, Breakin’ into your heart like that"
+    }
+  ],
+  "name": "BTS",
+  "image": "/uploads/image-1623067971665.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60be0d74a21f615fa456917b"
+  },
+  "music": [],
+  "name": "Olivia Rodrigo",
+  "image": "/uploads/image-1623068020964.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60be0d9da21f615fa456917c"
+  },
+  "music": [],
+  "name": "Justin Bieber",
+  "image": "/uploads/image-1623068061951.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60be140e6b39045aac007b7e"
+  },
+  "music": [],
+  "name": "ROSÉ",
+  "image": "/uploads/image-1623069710318.jpg",
+  "__v": 0
+}]

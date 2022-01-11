@@ -1,0 +1,92 @@
+<%- include('partials/header-con.ejs') %>
+
+<section id="contact">
+    <form action='/index/contact' method="POST" >
+    <h3 class="section-header">CONTACT</h3>
+  
+    <div class="contact-wrapper">
+  
+      <form id="contact-form" class="form-horizontal" role="form">
+  
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="Name" name="contact[name]"  required="required"><br>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="email" class="form-control" placeholder="Email" name="contact[email]"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="You'll use this when you log in and if you ever need to reset your password." placeholder="Email" required="required"><br>
+          </div>
+        </div>
+  
+        <textarea class="form-control" rows="10" placeholder="Message" name="contact[message]"  required="required"></textarea>
+  
+        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+          <div class="button">
+            <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+          </div>
+  
+        </button>
+  
+      </form>
+  
+      <!---------------- 
+  
+        CONTACT PAGE RIGHT 
+      
+        ----------------->
+  
+      <div class="direct-contact-container">
+  
+        <ul class="contact-list">
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">KMUTT, Bangkok, Thailand</span></i></li>
+  
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">095-0062893</a></span></i></li>
+  
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">nat.natcha6@gmail.com</a></span></i></li>
+  
+        </ul>
+  
+        <!-- <hr>
+        <ul class="social-media-list">
+          <li><i class="fa fa-github" aria-hidden="true"></i></a>
+          </li>
+          
+          <li><a href="#" target="_blank" class="contact-icon">
+              <i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+              <i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+              <i class="fa fa-codepen" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <hr> -->
+  
+        <hr>
+        <ul class="social-media-list">
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-github" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-codepen" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <hr>
+        <div class="copyright">&copy; NATCHA SUPHAPJAN</div>
+  
+      </div>
+  
+    </div>
+  </section>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<%- include('partials/footer-login.ejs') %>

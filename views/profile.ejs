@@ -1,0 +1,37 @@
+<!-- <%- include('partials/h-user.ejs') %>
+
+<div class="container">
+    <h1 class="mb-3">Edit information</h1>
+    <form action="/user/?_method=PUT" method="POST" enctype="multipart/form-data">
+        
+            <label class="form-label">username</label>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" name="user[username]" class="form-control input_user" value="<%= user.username %>" placeholder="<%= user.username %>">
+        </div>
+            <label class="form-label">Email</label>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-at"></i></span>
+            </div>
+            <input type="email" name="user[email]" class="form-control input_user" value="<%= user.email %>" placeholder="<%= user.email %>">
+        </div>
+        <label class="form-label">Photo</label>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="far fa-images"></i></span>
+            </div>
+            <input type="file" name="profileImage" class="form-control input_user" accept="image/*">
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<%- include('partials/footer.ejs') %> -->

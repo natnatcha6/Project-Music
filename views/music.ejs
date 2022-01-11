@@ -1,0 +1,167 @@
+<%- include('partials/h-music.ejs') %>
+    <div class="wrapper" style="min-height: 100%;">
+        <div
+            style="padding: 30 0; background-image: url('https://i.pinimg.com/originals/1a/12/e1/1a12e173feaa4a9c5fed7d891ec3dc89.jpg'); background-size: 100% 250px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="d-flex justify-content-end px-2">
+                            <img src="<%= artist.image %>" class="img-fluid" style="width: 230" />
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex align-items-center">
+                        <div class="row">
+                            <h2 class="text-light">Best of <%= artist.name %>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h4 class="py-3">เพลงในเพลย์ลิสต์ <%= artist.name %>
+            </h4>
+            <div class="row">
+                <div class="col-8">
+
+                    <% music.forEach(function(music){ %>
+
+                        <div class="row border-top">
+                            <div class="col-2 align-self-center">
+                                <div class="text-center"></div>
+                            </div>
+                            <div class="col-3 align-self-center">
+                                <div class="text-center">
+                                    <a href="/artist/melody/<%= music.music %>"><img src="<%= music.image %>"
+                                            class="img-fluid image-item" /></a>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-center">
+                                <a href="/artist/melody/<%= music.music %>">
+                                    <div class="truncate-text">
+                                        <h6>
+                                            <%= music.music %>
+                                        </h6>
+                                    </div>
+
+                                </a>
+                            </div>
+                        </div>
+
+                        <% if(currentUser) { %>
+                            <form id="favorite" action="/artist/<%= music.name %>" method="POST">
+                                <input type="text" name="fav[username]" value="<%= currentUser.username %>" hidden />
+                                <input type="text" name="fav[music]" value="<%= music.music %>" hidden />
+                                <input type="text" name="fav[name]" value="<%= music.name %>" hidden />
+                                <input type="text" name="fav[image]" value="<%= music.image %>" hidden />
+
+                                <button class="fa fa-heart" aria-hidden="true"></button>
+                                <!-- <div class="btn-box">
+                            <i class="fa fa-heart favorite active" aria-hidden="true" onclick="handleFavorite()"></i>
+                        </div> -->
+                            </form>
+                            <% }%>
+                                <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <style>
+        element.style {
+            padding: 30 0;
+            background-color: #aec7be;
+        }
+
+        #favorite button {
+            color: #5c5c5c;
+            border: thick;
+            font-size: 27px;
+            background: none;
+            font-weight: 900;
+            float: right;
+            margin: -62px;
+            margin-right: 54px;
+        }
+
+        #favorite button:hover {
+            color: #ff002d;
+            border: thick;
+            font-size: 27px;
+            background: none;
+            font-weight: 900;
+            float: right;
+            margin: -62px;
+            margin-right: 54px;
+        }
+
+        .btn1 {
+            font: bold 12px/12px Arial, sans-serif;
+            color: white;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 10px 10px;
+            background: #fed136;
+            cursor: pointer;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+
+        .btn1:hover {
+            background: #e3b412;
+            color: #fff;
+        }
+
+        .btn2 {
+            font: bold 12px/12px Arial, sans-serif;
+            color: white;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 10px 10px;
+            background: red;
+            cursor: pointer;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+
+        .btn2:hover {
+            background: pink;
+            color: #fff;
+        }
+
+        h2 {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            text-rendering: optimizeLegibility;
+        }
+
+        h2.retroshadow {
+            color: #2c2c2c;
+            letter-spacing: 0.05em;
+            text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        h6 {
+            font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+            font-size: 20px;
+            height: 11px;
+            color: rgb(61, 61, 61);
+            text-transform: uppercase;
+            text-rendering: optimizeLegibility;
+        }
+
+        h6:hover {
+            color: rgb(0, 163, 128);
+        }
+    </style>
+
+    <%- include('partials/footer.ejs') %>
